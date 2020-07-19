@@ -1,5 +1,6 @@
 package com.seongmin.book.springboot.domain.posts;
 
+import com.seongmin.book.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,7 +31,8 @@ public void 주문취소()
 //△롬복의 어노테이션 코드를 단순화 시켜주지만 꼭 필수 어노테이션은 아니다.
 @Entity
 //JPA의 어노테이션, 주요 어노테이션을 클래스에 가까이 두는 습관이 좋다. 테이블과 링크될 클래스임을 나타낸다.
-public class Posts {
+public class Posts extends BaseTimeEntity {
+    //시간 클래스를 상속
     @Id
     //entity의 PK임을 나타냄
     @GeneratedValue(strategy = GenerationType.IDENTITY)
